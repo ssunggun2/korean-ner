@@ -95,7 +95,7 @@ class NaverNerProcessor(object):
         elif mode == "test":
             file_to_read = self.args.test_file
 
-        logger.info(f"LOOKING AT {(os.path.join(self.args.data_dif, file_to_read))}")
+        logger.info(f"LOOKING AT {(os.path.join(self.args.data_dir, file_to_read))}")
         return self._create_examples(self._read_file(os.path.join(self.args.data_dir, file_to_read)), mode)
             
 def load_word_matrix(args, word_vocab):
