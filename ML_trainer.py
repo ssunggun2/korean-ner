@@ -1,16 +1,16 @@
 import os
-import torch
 import shutil
 import logging
+from tqdm import tqdm, trange
+
 import numpy as np
-from tqdm import trange, tqdm
+import torch
+from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
+from torch.optim import Adam
 
-from torch.optim.adam import Adam
-from torch.utils.data import RandomSampler, SequentialSampler, DataLoader
-
-from ML_model import BiLSTM_CNN_CRF
 from ML_dataloader import load_word_matrix
-from ML_utils import get_labels, get_test_texts, set_seed, compute_metrics, show_report
+from ML_utils import set_seed, load_vocab, compute_metrics, show_report, get_labels, get_test_texts
+from ML_model import BiLSTM_CNN_CRF
 
 logger = logging.getLogger(__name__)
 

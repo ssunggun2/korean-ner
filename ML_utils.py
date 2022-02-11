@@ -1,10 +1,12 @@
 import os
-import torch
-import gdown
+import re
 import random
 import logging
-import numpy as np
 from collections import Counter
+
+import gdown
+import torch
+import numpy as np
 from seqeval.metrics import precision_score, recall_score, f1_score, classification_report
 
 logger = logging.getLogger(__name__)
